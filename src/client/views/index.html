@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Test</title>
+      <meta name="Enter the URL of an article to check its sentiment" content="Example" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <header>
+            <div>
+                <h1>Article sentiment checker</h1>
+                <p>Enter the URL of an article to check its sentiment</p>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter URL">
+                    <button type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" submit="return Client.handleSubmit(event)">Check it out</button>
+                </form>
+            </section>
+
+            <section class="results">
+                <h2>Sentiment?</h2>
+                <div id="results">
+                  <p id="coming" class="hide">Checking...</p>
+                  <ul id="data-list" class="data-list">
+                    <li id="score_tag"></li>
+                    <li id="agreement"></li>
+                    <li id="confidence"></li>
+                    <li id="irony"></li>
+                    <li id="subjectivity"></li>
+                  </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <p class="footer-text">Footer</p>
+        </footer>
+        <script>
+          // Check that service workers are supported
+          if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+            });
+          }
+        </script>
+    </body>
+</html>
