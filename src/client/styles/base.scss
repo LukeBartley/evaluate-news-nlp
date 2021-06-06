@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap');
+
+$font-main: 'Crimson Pro', sans-serif;
+$font-head: 'Roboto', sans-serif;
+$dark-blue: #00008B;
+$slate-grey: #708090;
+$dim-grey: #696969;
+$light-brown: #F5F5DC;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font: 1rem $font-main;
+    color: $dark-blue;
+    background: $light-brown;
 }
 
 main {
@@ -11,4 +23,30 @@ main {
 section {
     max-width: 800px;
     margin: 50px auto;
+}
+
+h1 {
+  font: 2rem $font-head;
+  color: $slate-grey;
+  margin-top: 30px;
+}
+
+h2 {
+  font: 1.5rem $font-main;
+  font-weight: bold;
+  color: $dim-grey;
+}
+
+.footer-text {
+  font: 1rem $font-head;
+}
+
+section.results {
+  ul {
+    margin-top: 10px;
+  }
+  li {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
 }

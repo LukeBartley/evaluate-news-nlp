@@ -24,7 +24,7 @@ It would probably be good to first get your basic project setup and functioning.
 
 Remember that once you clone, you will still need to install everything:
 
-`cd` into your new folder and run:
+`cd` into your new folder and run: 
 - `npm install`
 
 ## Setting up the API
@@ -79,8 +79,8 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 ...Not that you would want to do that. This means that our updated API credential settings will look like this:
 ```javascript
 // set aylien API credentials
-// NOTICE that textapi is the name I used, but it is arbitrary. 
-// You could call it aylienapi, nlp, or anything else, 
+// NOTICE that textapi is the name I used, but it is arbitrary.
+// You could call it aylienapi, nlp, or anything else,
 //   just make sure to make that change universally!
 var textapi = new aylien({
   application_id: process.env.API_ID,
@@ -90,7 +90,7 @@ var textapi = new aylien({
 
 ### Step 5: Using the API
 
-We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://docs.aylien.com/textapi/endpoints/#api-endpoints). And you can see how using the SDK simplifies the requests we need to make. 
+We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://docs.aylien.com/textapi/endpoints/#api-endpoints). And you can see how using the SDK simplifies the requests we need to make.
 
 I won't provide further examples here, as it's up to you to create the various requests and make sure your server is set up appropriately.
 
@@ -100,7 +100,7 @@ Once you are hooked up to the Aylien API, you are most of the way there! Along w
 
 - Parse the response body to dynamically fill content on the page.
 - Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements. 
-- Go back to the web pack config and add the setup for service workers.  
+- Go back to the web pack config and add the setup for service workers. 
 - Test that the site is now available even when you stop your local server 
 
 ## Deploying

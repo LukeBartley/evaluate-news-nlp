@@ -24,18 +24,18 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({
+            // simulate the removal of files
+            dry: true,
+            // write logs to console
+            verbose: true,
+            // remove unused webpack assets on rebuild
+            protectWebpackAssets: false,
+            cleanStaleWebpackAssets: true
+        }),
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
-        }),
-        new CleanWebpackPlugin({
-            // Simulate the removal of files
-            dry: true,
-            // Write Logs to Console
-            verbose: true,
-            // Automatically remove all unused webpack assets on rebuild
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false
         }),
         new MiniCssExtractPlugin(),
         new WorkboxPlugin.GenerateSW()

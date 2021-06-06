@@ -9,7 +9,7 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
     "build-dev-open": "webpack-dev-server --config webpack.dev.js --open"
   },
-  "keywords": [],
+  "keywords": [], 
   "author": "",
   "license": "ISC",
   "description": "",
