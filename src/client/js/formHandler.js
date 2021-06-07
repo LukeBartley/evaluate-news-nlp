@@ -27,12 +27,12 @@ function handleSubmit(event) {
         console.log("Updating the UI")
         document.getElementById('coming').classList.add('hide')
         const newScore_tag = Client.rankScore(response.score_tag);
-        document.getElementById('score_tag').innerHTML = `Sentiment: ${newScore_tag}`
         document.getElementById('agreement').innerHTML = `Agreement: ${response.agreement}`
         document.getElementById('confidence').innerHTML = `Confidence: ${response.confidence}/100`
         document.getElementById('irony').innerHTML = `Irony: ${response.irony}`
         document.getElementById('subjectivity').innerHTML = `Subjectivity: ${response.subjectivity}`
         document.getElementById('data-list').classList.remove('hide')
+        document.getElementById('score_tag').innerHTML = `Sentiment: ${newScore_tag}`
     })
   }
   else {
