@@ -14,4 +14,4 @@ export {
  checkForName,
  handleSubmit,
  rankScore,
-} 
+}
