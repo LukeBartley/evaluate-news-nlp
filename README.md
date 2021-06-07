@@ -1,4 +1,3 @@
-# Project Instructions
 
 ### Meaning Cloud Language Identification API is used
 
