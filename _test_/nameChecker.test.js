@@ -1,6 +1,6 @@
 import {checkForName} from '../src/client/js/nameChecker'
 
-describe("Test to make sure input is a url",() => {
-    test("Test for checkForName() function", () => {
+describe("Test for url",() => {
+    test("Test checkForName() function", () => {
        expect(checkForName("Test")).toBe(false);
         })})

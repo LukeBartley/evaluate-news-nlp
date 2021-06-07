@@ -22,7 +22,7 @@ function handleSubmit(event) {
       console.log(res)
       return res.json()
     })
-    // update ui
+    // update ui with score
     .then (function (response) {
         console.log("Updating the UI")
         document.getElementById('coming').classList.add('hide')
