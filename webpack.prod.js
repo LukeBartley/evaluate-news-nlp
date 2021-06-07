@@ -1,12 +1,19 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
+  output: {
+    libraryTarget: 'var',
+    library: 'Client'
+  },
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+},
     entry: './src/client/index.js',
     mode: 'production',
     module: {
@@ -15,6 +22,10 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+              test: /\.(gif|png|jpe?g)$/i,
+              use: [{loader: 'file-loader'}]
             },
             {
               test: /\.scss$/,
@@ -29,12 +40,6 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(),
         new WorkboxPlugin.GenerateSW()
-    ],
-    output: {
-      libraryTarget: 'var',
-      library: 'Client'
-    },
-    optimization: {
-      minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
-  }
+    ]
+
 }
